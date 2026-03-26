@@ -1,10 +1,13 @@
 import numpy as np
 import pandas as pd
+import os
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 
 def preprocess():
-    df = pd.read_csv('data/insurance.csv')
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    df = pd.read_csv(os.path.join(BASE_DIR, 'data', 'insurance (1).csv'))
     
     le = LabelEncoder()
     df['smoker'] = le.fit_transform(df['smoker'])
