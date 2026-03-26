@@ -10,4 +10,5 @@ model.fit(X_train, y_train)
 
 os.makedirs('models', exist_ok=True)
 joblib.dump(model, 'models/model.pkl')
+joblib.dump(scaler, 'models/scaler.pkl')
 print("Model saved!")
